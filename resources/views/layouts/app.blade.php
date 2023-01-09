@@ -16,73 +16,14 @@
 
 <body id="page-top">
   <div id="wrapper">
-    <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon">
-          <img src="img/logo/logo2.png">
-        </div>
-        <div class="sidebar-brand-text mx-3">E-Farming</div>
-      </a>
-      <hr class="sidebar-divider my-0">
-      <li class="nav-item {{Request::segment(1) == 'home' ? 'active' : ''}}">
-        <a class="nav-link" href="{{ route('home') }}">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
-      <hr class="sidebar-divider">
-      <div class="sidebar-heading">
-        Menu
-      </div>
-      <li class="nav-item {{Request::segment(1) == 'user' ? 'active' : ''}}">
-        <a class="nav-link" href="{{ route('user.index') }}">
-          <i class="fas fa-fw fa-user"></i>
-          <span>Kelola Petani</span>
-        </a>
-      </li>
-      <hr class="sidebar-divider">
-      <div class="sidebar-heading">
-        Laporan
-      </div>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-calendar"></i>
-          <span>Laporan Penanaman</span>
-        </a>
-      </li>
-      <hr class="sidebar-divider">
-      <div class="version" id="version-ruangadmin"></div>
-    </ul>
-    <!-- Sidebar -->
+    <!-- Sidebar START -->
+    @include('layouts.part.side_nav')
+    <!-- Sidebar END -->
+
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <!-- TopBar -->
-        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
-          <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-          <ul class="navbar-nav ml-auto">
-            <div class="topbar-divider d-none d-sm-block"></div>
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">{{ auth()->user()->nama }}</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Keluar
-                </a>
-              </div>
-            </li>
-          </ul>
-        </nav>
+        @include('layouts.part.nav')
         <!-- Topbar -->
 
         <!-- Container Fluid-->
@@ -133,17 +74,9 @@
         </div>
         <!---Container Fluid-->
       </div>
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b>Owner</b>
-            </span>
-          </div>
-        </div>
-      </footer>
-      <!-- Footer -->
+      <!-- Footer START -->
+      @include('layouts.part.footer')
+      <!-- Footer END -->
     </div>
   </div>
 
