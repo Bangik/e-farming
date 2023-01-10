@@ -25,7 +25,7 @@
                 @foreach ($user as $key => $value)
                   <tr>
                     <td>{{ucfirst($key)}}</td>
-                    <td>: {{$value}}</td>
+                    <td>: {{ $key == 'created_at' || $key == 'updated_at' ? date('d-m-Y H:i:s', strtotime($value)) : $value }}</td>
                   </tr>
                 @endforeach
               </table>

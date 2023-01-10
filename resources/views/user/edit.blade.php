@@ -22,7 +22,7 @@
               @csrf
               @method('PUT')
               <div class="form-group">
-                <label for="nama">Nama</label>
+                <label for="nama">Nama</label> <span class="text-danger">*</span>
                 <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ $user->nama }}">
                 @error('nama')
                 <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
                 @enderror
               </div>
               <div class="form-group">
-                <label for="username">Username</label>
+                <label for="username">Username</label> <span class="text-danger">*</span>
                 <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ $user->username }}">
                 @error('username')
                 <span class="invalid-feedback" role="alert">
@@ -40,7 +40,7 @@
                 @enderror
               </div>
               <div class="form-group">
-                <label for="status">Status</label>
+                <label for="status">Status</label> <span class="text-danger">*</span>
                 <input type="text" class="form-control @error('status') is-invalid @enderror" id="status" name="status" value="{{ $user->status }}">
                 @error('status')
                 <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
                 @enderror
               </div>
               <div class="form-group">
-                <label for="telepon">Telepon</label>
+                <label for="telepon">Telepon</label> <span class="text-danger">*</span>
                 <input type="text" class="form-control @error('telepon') is-invalid @enderror" id="telepon" name="telepon" value="{{ $user->telepon }}">
                 @error('telepon')
                 <span class="invalid-feedback" role="alert">
@@ -58,7 +58,7 @@
                 @enderror
               </div>
               <div class="form-group">
-                <label for="alamat">Alamat</label>
+                <label for="alamat">Alamat</label> <span class="text-danger">*</span>
                 <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" rows="3">{{ $user->alamat }}</textarea>
                 @error('alamat')
                 <span class="invalid-feedback" role="alert">
@@ -67,7 +67,7 @@
                 @enderror
               </div>
               <div class="form-group">
-                <label for="jenis_kelamin">Jenis Kelamin</label>
+                <label for="jenis_kelamin">Jenis Kelamin</label> <span class="text-danger">*</span>
                 <select class="form-control @error('jenis_kelamin') is-invalid @enderror" id="jenis_kelamin" name="jenis_kelamin">
                   <option value="">Pilih Jenis Kelamin</option>
                   <option value="Laki-laki" {{ $user->jenis_kelamin == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
