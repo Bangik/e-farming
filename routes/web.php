@@ -24,4 +24,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::resource('lahan', App\Http\Controllers\LahanController::class);
     Route::resource('user', App\Http\Controllers\UserController::class);
+    Route::resource('paket-tanam', App\Http\Controllers\PaketTanamController::class);
 });
