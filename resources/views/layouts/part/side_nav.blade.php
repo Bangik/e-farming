@@ -21,6 +21,12 @@
       <span>Kelola Petani</span>
     </a>
   </li>
+  <li class="nav-item {{Request::segment(1) == 'lahan' ? 'active' : ''}}">
+    <a class="nav-link" href="{{ route('lahan.index') }}">
+      <i class="fas fa-fw fa-map"></i>
+      <span>Kelola Lahan</span>
+    </a>
+  </li>
   <hr class="sidebar-divider">
   <div class="sidebar-heading">
     Laporan
