@@ -48,14 +48,25 @@
                     <nav>
                         <a class="logo-light m-r-auto" href="agency_layout.html"><img alt="" class="img-fluid" src="{{asset('img/logo.png')}}"></a>
                         <div class="responsive-btn">
-                            <a class="toggle-nav" href="#"><i aria-hidden="true" class="fa fa-bars text-white"></i></a>
+                            <a class="toggle-nav" href="/"><i aria-hidden="true" class="fa fa-bars text-white"></i></a>
                         </div>
                         <div class="navbar m-l-auto" id="togglebtn">
                             <div class="responsive-btn"><h5 class="btn-back">back</h5></div>
                             <ul class="main-menu">
-                                <li><a href="#">home</a></li>
-                                <li><a href="#">Menu</a></li>
-                                <li><a href="#">Fitur</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="#">Menu</a>
+                                    <ul>
+                                        <li><a href="#">Lahan</a></li>
+                                        <li><a href="#">Paket Tanam</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Fitur</a>
+                                    <ul>
+                                        <li><a href="#">Alat dan Bahan</a></li>
+                                        <li><a href="#">Jadwal Obat dan Hama</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{route('login')}}">Masuk</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -74,21 +85,15 @@
                         <div class="center-text">
                             <div>
                                 <div class="header-text">
-                                    <h1 class="text-uppercase"><span class="bold-text">Digital</span> Agency</h1>
+                                    <h1 class="text-uppercase"><span class="bold-text">E-</span>Farming</h1>
                                 </div>
                                 <div class="header-sub-text">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                                        ever
-                                        since the 1500s.</p>
-                                </div>
+                                    <p>Revolutionizing Agriculture through Technology. <br> Telusuri kami untuk mempelajari lebih lanjut tentang bagaimana kami dapat membantu mewujudkan ide Anda</p>
+                                </div> 
                                 <div class="link-horizontal">
                                     <ul>
                                         <li>
-                                            <a class=" btn btn-default btn-gradient">request a quote</a>
-                                        </li>
-                                        <li>
-                                            <a class="btn btn-default btn-gradient text-white active">start now</a>
+                                            <a href="{{route('login')}}" class="btn btn-default btn-gradient text-white active">Masuk</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -154,18 +159,11 @@
                     <div class="agency-header-center-container">
                         <div class="borders"></div>
                         <div class="agency-head">
-                            <h3 class="agency-head-text">We Are Here <span class="block-span">For Made Your Idea</span></h3>
+                            <h3 class="agency-head-text">Kami Di Sini <span class="block-span">Untuk Ide Anda</span></h3>
                         </div>
                     </div>
 
-                    <p class="agency-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                        do eiusm od tempor
-                        incididunt
-                        ut labore et dolore magna aliqua ut enim adminim veni am for humanity for
-                        savings
-                        anything
-                        for your future.</p>
-                    <a class=" btn btn-default btn-gradient" href="#">view more</a>
+                    <p class="agency-para">Komitmen kami untuk membantu para petani dan pengusaha pertanian mewujudkan ide-ide inovatif mereka menjadi kenyataan. Baik itu mengembangkan varietas tanaman baru, menerapkan teknik pertanian presisi, atau meluncurkan agribisnis baru, kami memiliki keahlian dan sumber daya untuk membantu mewujudkannya.</p>
                 </div>
             </div>
         </div>
@@ -197,66 +195,42 @@
                     <div class="center-text">
                         <div class="format-container">
                             <h6 class="borders-before text-uppercase">
-                                <span>Our services</span>
+                                <span>Layanan Kami</span>
                             </h6>
                             <div class="format-head-text">
-                                <h2 class="about-font-header">Services we’re <span class="block-span">
-                                                provided</span></h2>
+                                <h2 class="about-font-header">Layanan yang <span class="block-span">
+                                                kami sediakan</span></h2>
                             </div>
                             <div class="format-sub-text">
-                                <p class="about-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt.</p>
+                                <p class="about-para">Dari penelitian dan pengembangan hingga pemasaran dan distribusi, kami berdedikasi untuk mendukung pertumbuhan dan kesuksesan industri e-farming.</p>
                             </div>
-                            <a class=" btn btn-default btn-gradient" href="#">view more</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-8">
                     <div class="row">
-                        <div class="col-sm-4 center-content unset-height">
+                        <div class="col-sm-6 center-content unset-height">
                             <ul class="icon-collection" data-aos="fade-left" data-aos-duration="500">
                                 <li class="about-icon">
                                     <a class="center-content" href="#"><img alt=""
                                                                             src="{{asset('img/1.png')}}">
-                                        <h5>Buisness Planning</h5>
+                                        <h5>Rencana Tanam</h5>
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-sm-4 center-content unset-height">
+                        <div class="col-sm-6 center-content unset-height">
                             <ul class="icon-collection" data-aos="fade-left" data-aos-duration="2000">
                                 <li class="about-icon">
                                     <a class="center-content" href="#"><img alt=""
                                                                             src="{{asset('img/2.png')}}">
-                                        <h5>Divorce Planning</h5>
+                                        <h5>Laporan Panen</h5>
                                     </a>
                                 </li>
                                 <li class="about-icon">
                                     <a class="center-content" href="#"><img alt=""
                                                                             src="{{asset('img/3.png')}}">
-                                        <h5>Finance Planning</h5>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-4 center-content unset-height">
-                            <ul class="icon-collection" data-aos="fade-left" data-aos-duration="3000">
-                                <li class="about-icon">
-                                    <a class="center-content" href="#"><img alt=""
-                                                                            src="{{asset('img/4.png')}}">
-                                        <h5>Estate Planning</h5>
-                                    </a>
-                                </li>
-                                <li class="about-icon">
-                                    <a class="center-content" href="#"><img alt=""
-                                                                            src="{{asset('img/5.png')}}">
-                                        <h5>Build Planning</h5>
-                                    </a>
-                                </li>
-                                <li class="about-icon">
-                                    <a class="center-content" href="#"><img alt=""
-                                                                            src="{{asset('img/6.png')}}">
-                                        <h5>Invest Planning</h5>
+                                        <h5>Rencana Paket Tanam</h5>
                                     </a>
                                 </li>
                             </ul>
@@ -275,14 +249,14 @@
                 <div class="col-lg-3 col-md-3 col-sm-12 set-first">
                     <div class="logo-sec">
                         <div class="footer-title mobile-title">
-                            <h3 class="text-white">About Us</h3>
+                            <h3 class="text-white">Tentang Kami</h3>
                         </div>
                         <div class="footer-contant">
                             <img alt="" class="img-fluid footer-logo" src="{{asset('img/logo.png')}}">
                             <div class="footer-para">
-                                <h6 class="text-white para-address">Unice</h6>
-                                <h6 class="text-white para-address">324 Madison Street New york City, </h6>
-                                <h6 class="text-white para-address">NY 10001.</h6>
+                                <h6 class="text-white para-address">E-Farming</h6>
+                                <h6 class="text-white para-address">Desa Karang Duren</h6>
+                                <h6 class="text-white para-address">Jember</h6>
                             </div>
                             <ul class="d-d-flex footer-social social">
                                 <li class="footer-social-list">
@@ -304,22 +278,6 @@
                     </div>
                     <div class="footer-contant">
                         <h5 class="footer-headings">Home</h5>
-                        <div>
-                            <ul class="footer-lists op-text">
-                                <li>
-                                    <a href="#">Portfolio Website</a>
-                                </li>
-                                <li>
-                                    <a href="#">Set up an account</a>
-                                </li>
-                                <li>
-                                    <a href="#">Invoice Creation</a>
-                                </li>
-                                <li>
-                                    <a href="#">Get Our Specials</a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-12">
@@ -331,16 +289,10 @@
                         <div>
                             <ul class="footer-lists op-text">
                                 <li>
-                                    <a href="#">Chat24</a>
+                                    <a href="#">Lahan</a>
                                 </li>
                                 <li>
-                                    <a href="#">Zoom</a>
-                                </li>
-                                <li>
-                                    <a href="#">Alpha Payment</a>
-                                </li>
-                                <li>
-                                    <a href="#">Upwork</a>
+                                    <a href="#">Paket Tanam</a>
                                 </li>
                             </ul>
                         </div>
@@ -355,16 +307,10 @@
                         <div>
                             <ul class="footer-lists op-text">
                                 <li>
-                                    <a href="#">For Freelancers</a>
+                                    <a href="#">Alat dan Bahan</a>
                                 </li>
                                 <li>
-                                    <a href="#">For Companies</a>
-                                </li>
-                                <li>
-                                    <a href="#">For Business</a>
-                                </li>
-                                <li>
-                                    <a href="#">General Help</a>
+                                    <a href="#">Jadwal Obat dan Hama</a>
                                 </li>
                             </ul>
                         </div>
@@ -378,23 +324,9 @@
     <div class="agency copyright">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    <div class="link-horizontal">
-                        <ul>
-                            <li>
-                                <a class="copyright-text" href="#">Privacy Policy</a>
-                            </li>
-                            <li>
-                                <a class="copyright-text" href="#">Terms &amp; Conditions</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <div>
-                        <h6 class="copyright-text text-white text-right">Copyright ©2019 Unice by
-                            <i aria-hidden="true" class="fa fa-heart"></i> pixelstrap
-                        </h6>
+                        <h6 class="copyright-text text-white text-right">Copyright ©2019 Owner                        </h6>
                     </div>
                 </div>
             </div>
