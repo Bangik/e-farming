@@ -27,7 +27,7 @@
 
   <li class="nav-item {{Request::segment(1) == 'alatb' ? 'active' : ''}}">
     <a class="nav-link" href="{{ route('alatb.index') }}">
-      <i class="fas fa-fw fa-user"></i>
+      <i class="fas fa-snowplow"></i>
       <span>Kelola Alat dan Bahan</span>
     </a>
   </li>
@@ -36,6 +36,13 @@
     <a class="nav-link" href="{{ route('lahan.index') }}">
       <i class="fas fa-fw fa-map"></i>
       <span>Kelola Lahan</span>
+    </a>
+  </li>
+
+  <li class="nav-item {{Request::segment(1) == 'obath' ? 'active' : ''}}">
+    <a class="nav-link" href="{{ route('obath.index') }}">
+      <i class="fas fa-skull-crossbones"></i>
+      <span>Jadwal Obat & Hama</span>
     </a>
   </li>
 
