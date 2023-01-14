@@ -24,5 +24,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::resource('lahan', App\Http\Controllers\LahanController::class);
     Route::resource('user', App\Http\Controllers\UserController::class);
+    Route::resource('alatb', App\Http\Controllers\Alat_BahanController::class);
+    Route::resource('obath', App\Http\Controllers\ObathController::class);
     Route::resource('paket-tanam', App\Http\Controllers\PaketTanamController::class);
 });
+
+//Update Alat Bahan
+Route::post('alatb2/update/{id}', 'App\Http\Controllers\Alat_BahanController@update');
+
+//Update Obat Hama
+Route::post('obath2/update/{id}', 'App\Http\Controllers\ObathController@update');

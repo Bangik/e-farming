@@ -22,11 +22,11 @@
 
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
-        <!-- TopBar -->
+        <!-- TopBar START -->
         @include('layouts.part.nav')
-        <!-- Topbar -->
+        <!-- Topbar END -->
 
-        <!-- Container Fluid-->
+        <!-- Container Fluid START-->
         <div class="container-fluid" id="container-wrapper">
           @if (session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -36,6 +36,7 @@
               </button>
             </div>
           @endif
+
           @if (session('error'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
               {{ session('error') }}
@@ -45,35 +46,18 @@
             </div>
           @endif
           
+          <!-- Content Dashboard START-->
           @yield('content')
+          <!-- Content Dashboard END-->
+          
+          <!-- Modal Logout START-->
+          @include('layouts.part.modal_layout')
+          <!-- Modal Logout END-->
 
-          <!-- Modal Logout -->
-          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
-          aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Keluar</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>Apakah anda yakin untuk keluar ?</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Batal</button>
-                  <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-primary">Keluar</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        <!---Container Fluid-->
+        <!--- Container Fluid END-->
       </div>
+
       <!-- Footer START -->
       @include('layouts.part.footer')
       <!-- Footer END -->
