@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\alat_bahan;
-use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class Alat_BahanController extends Controller
 {
     public function index()
     {
-        return view('alat_bahan.index');
+        $konten = DB::table('alat_bahan')->get();
+        return view('alat_bahan.index',['konten' => $konten]);
     }
 
     public function create()

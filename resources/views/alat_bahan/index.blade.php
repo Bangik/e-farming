@@ -36,11 +36,12 @@
               </thead>
               <tbody>
                 
+                @foreach ($konten as $isi)
                 <tr>
-                  <td>id</td>
-                  <td>Nama Bahan / Alat</td>
-                  <td>Satuan</td>
-                  <td>Kategori</td>
+                  <td>{{$isi->id_bahan_alat}}</td>
+                  <td>{{$isi->bahan_alat}}</td>
+                  <td>{{$isi->satuan}}</td>
+                  <td>{{$isi->kategori}}</td>
                   <td>
                     <div class="row">
                       <div class="col-sm-6">
@@ -51,6 +52,7 @@
 
                         <form action="" method="POST">
                           @csrf
+
                           
                           <button type="submit" class="btn btn-sm btn-danger" title="Hapus"> <i class="fas fa-trash"></i> </button>
                         </form>
@@ -59,7 +61,7 @@
                     </div>
                   </td>
                 </tr>                  
-                
+                @endforeach
               </tbody>
             </table>
           </div>
