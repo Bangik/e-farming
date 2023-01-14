@@ -26,6 +26,7 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::resource('user', App\Http\Controllers\UserController::class);
     Route::resource('alatb', App\Http\Controllers\Alat_BahanController::class);
     Route::resource('obath', App\Http\Controllers\ObathController::class);
+    Route::resource('paket-tanam', App\Http\Controllers\PaketTanamController::class);
 });
 
 //Update Alat Bahan
