@@ -40,6 +40,11 @@
                   </tr>
 
                   <tr>
+                    <td>Stok</td>
+                    <td>: {{$stok}}</td>
+                  </tr>
+
+                  <tr>
                     <td>Satuan</td>
                     <td>: {{$satuan}}</td> 
                   </tr>

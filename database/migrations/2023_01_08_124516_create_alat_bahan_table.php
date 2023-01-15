@@ -15,6 +15,10 @@ class CreateAlatBahanTable extends Migration
     {
         Schema::create('alat_bahan', function (Blueprint $table) {
             $table->id();
+            $table->string('kategori');
+            $table->string('nama');
+            $table->string('satuan');
+            $table->integer('stok');
             $table->timestamps();
         });
     }

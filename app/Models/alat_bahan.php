@@ -8,19 +8,31 @@ use Illuminate\Support\Facades\DB;
 
 class alat_bahan extends Model
 {
+    use HasFactory;
+
+    protected $table = 'alat_bahan';
+
+    protected $fillable = [
+        'kategori',
+        'nama',
+        'satuan',
+        'stok'
+    ];
 
     public static function insert($request){
         $request->validate([
             'kategori' => 'required',
-            'bahan_alat' => 'required',
-            'satuan' => 'required|numeric',
+            'nama' => 'required',
+            'satuan' => 'required',
+            'stok' => 'required|numeric'
         ]);
         
         // insert sql
         DB::table('alat_bahan')->insert([
             'kategori' => $request->kategori,
-            'bahan_alat' => $request->bahan_alat,
-            'satuan' => $request->satuan
+            'nama' => $request->nama,
+            'satuan' => $request->satuan,
+            'stok' => $request->stok
         ]);
     }
 

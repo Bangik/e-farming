@@ -29,10 +29,19 @@ class Alat_BahanController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'nama' => 'required',
+            'kategori' => 'required',
+            'satuan' => 'required',
+            'stok' => 'required'
+        ]);
         // dd($request->kategori);
-        $update = DB::table('alat_bahan')->where('id_bahan_alat', $id)->update(
-            ['bahan_alat' => $request->nama, 'kategori' => $request->kategori,'satuan' => $request->satuan]
-            );
+        DB::table('alat_bahan')->where('id', $id)->update([
+            'nama' => $request->nama,
+            'kategori' => $request->kategori,
+            'satuan' => $request->satuan,
+            'stok' => $request->stok
+        ]);
         
         return redirect()->route('alatb.index')
             ->with('success', 'Data berhasil diupdate');
@@ -40,28 +49,30 @@ class Alat_BahanController extends Controller
 
     public function show($alatb)
     {
-        $konten = DB::table('alat_bahan')->where('id_bahan_alat', $alatb)->get()->toArray();
+        $konten = DB::table('alat_bahan')->where('id', $alatb)->get()->toArray();
         // dd($konten[0]);
-        $id = $konten[0]->id_bahan_alat;
-        $bahan_alat = $konten[0]->bahan_alat;
+        $id = $konten[0]->id;
+        $bahan_alat = $konten[0]->nama;
         $kategori = $konten[0]->kategori;
         $satuan = $konten[0]->satuan;
-        return view('alat_bahan.show',['id' => $id, 'ba' => $bahan_alat, 'kategori' => $kategori, 'satuan' => $satuan]);
+        $stok = $konten[0]->stok;
+        return view('alat_bahan.show',['id' => $id, 'ba' => $bahan_alat, 'kategori' => $kategori, 'satuan' => $satuan, 'stok' => $stok]);
     }
 
     public function edit($alatb)
     {
-        $konten = DB::table('alat_bahan')->where('id_bahan_alat', $alatb)->get()->toArray();
-        $id = $konten[0]->id_bahan_alat;
-        $bahan_alat = $konten[0]->bahan_alat;
+        $konten = DB::table('alat_bahan')->where('id', $alatb)->get()->toArray();
+        $id = $konten[0]->id;
+        $bahan_alat = $konten[0]->nama;
         $kategori = $konten[0]->kategori;
         $satuan = $konten[0]->satuan;
-        return view('alat_bahan.edit', ['id' => $id, 'ba' => $bahan_alat, 'kategori' => $kategori, 'satuan' => $satuan]);
+        $stok = $konten[0]->stok;
+        return view('alat_bahan.edit', ['id' => $id, 'ba' => $bahan_alat, 'kategori' => $kategori, 'satuan' => $satuan, 'stok' => $stok]);
     }
 
     public function destroy($alatb)
     {
-        DB::table('alat_bahan')->where('id_bahan_alat', $alatb)->delete();
+        DB::table('alat_bahan')->where('id', $alatb)->delete();
         
         return redirect()->route('alatb.index')
             ->with('success', 'Data berhasil dihapus');
