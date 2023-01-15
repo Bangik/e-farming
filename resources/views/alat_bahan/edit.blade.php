@@ -46,6 +46,16 @@
                 @enderror
               </div>
 
+              <div class="form-group">
+                <label for="stok">Stok</label> <span class="text-danger">*</span>
+                <input type="text" class="form-control @error('stok') is-invalid @enderror" id="stok" name="stok" value="{{ $stok }}">
+                
+                @error('stok')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
 
               <div class="form-group">
                 <label for="satuan">Satuan</label> <span class="text-danger">*</span>
@@ -58,10 +68,10 @@
               </div>
 
               <div class="form-group">
-                <label for="stok">Stok</label> <span class="text-danger">*</span>
-                <input type="text" class="form-control @error('stok') is-invalid @enderror" id="stok" name="stok" value="{{ $stok }}">
+                <label for="harga">Harga</label> <span class="text-danger">*</span>
+                <input type="number" class="form-control @error('harga') is-invalid @enderror" id="harga" name="harga" value="{{ $harga }}">
                 
-                @error('stok')
+                @error('harga')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
                 </span>

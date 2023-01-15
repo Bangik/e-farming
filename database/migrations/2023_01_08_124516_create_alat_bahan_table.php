@@ -19,6 +19,7 @@ class CreateAlatBahanTable extends Migration
             $table->string('nama');
             $table->string('satuan');
             $table->integer('stok');
+            $table->integer('harga');
             $table->timestamps();
         });
     }
