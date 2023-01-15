@@ -11,6 +11,7 @@
     </div>
 
     <div class="row mb-3">
+      @admin
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card h-100">
           <div class="card-body">
@@ -121,6 +122,22 @@
           </div>
         </div>
       </div>
+      @else
+      <!-- Area Chart -->
+      <div class="col-xl-12 col-lg-12">
+        <div class="card mb-4">
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Rekap Panen</h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-area">
+              <canvas id="myAreaChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      @endadmin
+      
       <!-- Invoice Example -->
       <div class="col-xl-8 col-lg-7 mb-4">
         <div class="card">

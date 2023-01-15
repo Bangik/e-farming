@@ -18,12 +18,14 @@
     Menu
   </div>
 
+  @admin
   <li class="nav-item {{Request::segment(1) == 'user' ? 'active' : ''}}">
     <a class="nav-link" href="{{ route('user.index') }}">
       <i class="fas fa-fw fa-user"></i>
       <span>Kelola Petani</span>
     </a>
   </li>
+  @endadmin
   
   <li class="nav-item {{Request::segment(1) == 'alatb' ? 'active' : ''}}">
     <a class="nav-link" href="{{ route('alatb.index') }}">
