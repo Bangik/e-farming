@@ -40,9 +40,9 @@
                 @foreach ($konten as $isi)
                 <tr>
                   <td>{{$isi->id}}</td>
-                  <td>{{$isi->nama_obat}}</td>
+                  <td>{{$isi->alatbahan->nama}}</td>
                   <td>{{$isi->jenis_obat}}</td>
-                  <td>{{$isi->tanggal}}</td>
+                  <td>{{ date('d M Y', strtotime($isi->tanggal)) }}</td>
                   <td>{{$isi->waktu}}</td>
                   <td>
                     <div class="row">

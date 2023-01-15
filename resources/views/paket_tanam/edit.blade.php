@@ -22,6 +22,19 @@
               @csrf
               @method('PUT')
               <div class="form-group">
+                <label for="alat_bahan">Alat dan Bahan</label> <span class="text-danger">*bisa pilih lebih dari satu </span>
+                <select class="form-control @error('alat_bahan') is-invalid @enderror" id="alat_bahan" name="alat_bahan[]" multiple>
+                  @foreach ($alat_bahans as $alat_bahan)
+                    <option value="{{ $alat_bahan->id }}" {{ in_array($alat_bahan->id, $paket_tanam->alat_bahan->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $alat_bahan->nama }}</option>
+                  @endforeach
+                </select>
+                @error('alat_bahan')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+              <div class="form-group">
                 <label for="nama_paket">Nama Paket Tanam</label> <span class="text-danger">*</span>
                 <input type="text" class="form-control @error('nama_paket') is-invalid @enderror" id="nama_paket" name="nama_paket" value="{{ $paket_tanam->nama_paket }}">
                 @error('nama_paket')

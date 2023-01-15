@@ -39,4 +39,14 @@ class alat_bahan extends Model
         ]);
     }
 
+    public function paket_tanam()
+    {
+        return $this->belongsToMany(PaketTanam::class, 'paket_tanam_alat', 'alat_bahan_id', 'paket_tanam_id');
+    }
+
+    public function obathama()
+    {
+        return $this->hasMany(obath::class, 'alat_bahan_id', 'id');
+    }
+
 }

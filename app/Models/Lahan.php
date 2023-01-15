@@ -13,6 +13,7 @@ class Lahan extends Model
 
     protected $fillable = [
         'user_id',
+        'paket_tanam_id',
         'nama',
         'status',
         'luas',
@@ -22,5 +23,10 @@ class Lahan extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function paket_tanam()
+    {
+        return $this->belongsTo(PaketTanam::class);
     }
 }

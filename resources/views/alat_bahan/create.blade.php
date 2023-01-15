@@ -24,7 +24,7 @@
               @csrf
               
               <div class="form-group">
-                  <label for="nama">Kategori</label> <span class="text-danger">*</span>
+                  <label for="kategori">Kategori</label> <span class="text-danger">*</span>
                   <select class="form-control @error('kategori') is-invalid @enderror" id="kategori" name="kategori">
                       
                       <option value="Alat"> Alat </option>

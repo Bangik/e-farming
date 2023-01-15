@@ -11,4 +11,14 @@ class PaketTanam extends Model
 
     protected $table = 'paket_tanam';
     protected $fillable = ['nama_paket'];
+
+    public function lahan()
+    {
+        return $this->hasMany(Lahan::class);
+    }
+
+    public function alat_bahan()
+    {
+        return $this->belongsToMany(alat_bahan::class, 'paket_tanam_alat', 'paket_tanam_id', 'alat_bahan_id');
+    }
 }

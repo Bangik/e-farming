@@ -16,18 +16,31 @@
         <div class="card">
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-primary">Data Detail Paket Tanam</h6>
-            <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('paket-tanam.edit', ['paket_tanam' => $paket_tanam['id']]) }}">Edit Data <i
+            <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('paket-tanam.edit', ['paket_tanam' => $paket_tanams['id']]) }}">Edit Data <i
                 class="fas fa-edit"></i></a>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table align-items-center table-flush">
-                @foreach ($paket_tanam as $key => $value)
+                @foreach ($paket_tanams as $key => $value)
+                  @if($key == 'updated_at' || $key == 'created_at')
+                    @break
+                  @endif
                   <tr>
-                    <td>{{ucfirst($key)}}</td>
-                    <td>: {{ $key == 'created_at' || $key == 'updated_at' ? date('d-m-Y H:i:s', strtotime($value)) : $value }}</td>
+                    <th>{{ ucwords(str_replace('_', ' ', $key)) }}</th>
+                    <td>: {{ $value }}</td>
                   </tr>
                 @endforeach
+                <tr>
+                  <th>Alat dan Bahan yang Digunakan</th>
+                  <td> :
+                    <ul>
+                      @foreach ($alat_bahans as $alat_bahan)
+                        <li>{{ $alat_bahan->nama }}</li>
+                      @endforeach
+                    </ul>
+                  </td>
+                </tr>
               </table>
             </div>
           </div>
