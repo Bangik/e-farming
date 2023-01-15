@@ -72,6 +72,17 @@
                 @enderror
               </div>
 
+              <div class="form-group">
+                <label for="harga">Harga</label> <span class="text-danger">*</span>
+                <input type="number" class="form-control @error('harga') is-invalid @enderror" id="harga" name="harga" value="{{ old('harga') }}">
+                
+                @error('harga')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+
 
               <button type="submit" class="btn btn-primary">Simpan</button>
             </form>

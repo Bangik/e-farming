@@ -49,6 +49,11 @@
                     <td>: {{$satuan}}</td> 
                   </tr>
 
+                  <tr>
+                    <td>Harga</td>
+                    <td>: {{$harga}}</td>
+                  </tr>
+
               </table>
             </div>
           </div>

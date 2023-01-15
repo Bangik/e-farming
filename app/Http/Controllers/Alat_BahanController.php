@@ -33,14 +33,16 @@ class Alat_BahanController extends Controller
             'nama' => 'required',
             'kategori' => 'required',
             'satuan' => 'required',
-            'stok' => 'required'
+            'stok' => 'required',
+            'harga' => 'required'
         ]);
         // dd($request->kategori);
         DB::table('alat_bahan')->where('id', $id)->update([
             'nama' => $request->nama,
             'kategori' => $request->kategori,
             'satuan' => $request->satuan,
-            'stok' => $request->stok
+            'stok' => $request->stok,
+            'harga' => $request->harga
         ]);
         
         return redirect()->route('alatb.index')
@@ -56,7 +58,8 @@ class Alat_BahanController extends Controller
         $kategori = $konten[0]->kategori;
         $satuan = $konten[0]->satuan;
         $stok = $konten[0]->stok;
-        return view('alat_bahan.show',['id' => $id, 'ba' => $bahan_alat, 'kategori' => $kategori, 'satuan' => $satuan, 'stok' => $stok]);
+        $harga = $konten[0]->harga;
+        return view('alat_bahan.show',['id' => $id, 'ba' => $bahan_alat, 'kategori' => $kategori, 'satuan' => $satuan, 'stok' => $stok, 'harga' => $harga]);
     }
 
     public function edit($alatb)
@@ -67,7 +70,8 @@ class Alat_BahanController extends Controller
         $kategori = $konten[0]->kategori;
         $satuan = $konten[0]->satuan;
         $stok = $konten[0]->stok;
-        return view('alat_bahan.edit', ['id' => $id, 'ba' => $bahan_alat, 'kategori' => $kategori, 'satuan' => $satuan, 'stok' => $stok]);
+        $harga = $konten[0]->harga;
+        return view('alat_bahan.edit', ['id' => $id, 'ba' => $bahan_alat, 'kategori' => $kategori, 'satuan' => $satuan, 'stok' => $stok, 'harga' => $harga]);
     }
 
     public function destroy($alatb)

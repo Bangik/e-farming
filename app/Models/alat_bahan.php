@@ -16,7 +16,8 @@ class alat_bahan extends Model
         'kategori',
         'nama',
         'satuan',
-        'stok'
+        'stok',
+        'harga'
     ];
 
     public static function insert($request){
@@ -24,7 +25,8 @@ class alat_bahan extends Model
             'kategori' => 'required',
             'nama' => 'required',
             'satuan' => 'required',
-            'stok' => 'required|numeric'
+            'stok' => 'required|numeric',
+            'harga' => 'required|numeric'
         ]);
         
         // insert sql
@@ -32,7 +34,8 @@ class alat_bahan extends Model
             'kategori' => $request->kategori,
             'nama' => $request->nama,
             'satuan' => $request->satuan,
-            'stok' => $request->stok
+            'stok' => $request->stok,
+            'harga' => $request->harga
         ]);
     }
 

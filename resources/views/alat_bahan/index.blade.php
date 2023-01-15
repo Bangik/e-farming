@@ -32,6 +32,7 @@
                   <th>Nama Bahan / Alat</th>
                   <th>Stok</th>
                   <th>Satuan</th>
+                  <th>Harga</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -44,6 +45,7 @@
                   <td>{{$isi->nama}}</td>
                   <td>{{$isi->stok}}</td>
                   <td>{{$isi->satuan}}</td>
+                  <td>{{$isi->harga}}</td>
                   <td>
                     <div class="row">
                       <div class="col-sm-6">
