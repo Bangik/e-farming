@@ -27,5 +27,10 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('currency', function ($expression) {
             return "Rp. <?php echo number_format($expression, 0, ',', '.'); ?>";
         });
+
+        // blade directive for middleware admin
+        Blade::if('admin', function () {
+            return auth()->check() && auth()->user()->role == 'admin';
+        });
     }
 }
