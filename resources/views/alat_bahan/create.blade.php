@@ -23,31 +23,43 @@
             <form action="{{ route('alatb.store') }}" method="POST">
               @csrf
               
-                <div class="form-group">
-                    <label for="nama">Kategori</label> <span class="text-danger">*</span>
-                    <select class="form-control @error('kategori') is-invalid @enderror" id="kategori" name="kategori">
-                        
-                        <option value="Alat"> Alat </option>
-                        <option value="Bahan"> Bahan </option>
-                    
-                    </select>
-                    @error('kategori')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
+              <div class="form-group">
+                  <label for="nama">Kategori</label> <span class="text-danger">*</span>
+                  <select class="form-control @error('kategori') is-invalid @enderror" id="kategori" name="kategori">
+                      
+                      <option value="Alat"> Alat </option>
+                      <option value="Bahan"> Bahan </option>
+                      <option value="Obat"> Obat </option>
+                  
+                  </select>
+                  @error('kategori')
+                  <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+              </div>
 
-                <div class="form-group">
-                    <label for="bahan_alat">Nama Bahan / Alat</label> <span class="text-danger">*</span>     
-                    <input type="text" class="form-control @error('bahan_alat') is-invalid @enderror" id="bahan_alat" name="bahan_alat" value="{{ old('bahan_alat') }}">
-                    
-                    @error('bahan_alat')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
+              <div class="form-group">
+                  <label for="nama">Nama Bahan / Alat</label> <span class="text-danger">*</span>     
+                  <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ old('nama') }}">
+                  
+                  @error('nama')
+                  <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+              </div>
+              
+              <div class="form-group">
+                <label for="stok">Stok</label> <span class="text-danger">*</span>
+                <input type="text" class="form-control @error('stok') is-invalid @enderror" id="stok" name="stok" value="{{ old('stok') }}">
+                
+                @error('stok')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
 
               <div class="form-group">
                 <label for="satuan">Satuan</label> <span class="text-danger">*</span>
@@ -59,6 +71,7 @@
                 </span>
                 @enderror
               </div>
+
 
               <button type="submit" class="btn btn-primary">Simpan</button>
             </form>

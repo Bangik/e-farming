@@ -28,9 +28,10 @@
               <thead class="thead-light">
                 <tr>
                   <th>ID</th>
-                  <th>Nama Bahan / Alat</th>
-                  <th>Satuan</th>
                   <th>Kategori</th>
+                  <th>Nama Bahan / Alat</th>
+                  <th>Stok</th>
+                  <th>Satuan</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -38,18 +39,19 @@
                 
                 @foreach ($konten as $isi)
                 <tr>
-                  <td>{{$isi->id_bahan_alat}}</td>
-                  <td>{{$isi->bahan_alat}}</td>
-                  <td>{{$isi->satuan}}</td>
+                  <td>{{$isi->id}}</td>
                   <td>{{$isi->kategori}}</td>
+                  <td>{{$isi->nama}}</td>
+                  <td>{{$isi->stok}}</td>
+                  <td>{{$isi->satuan}}</td>
                   <td>
                     <div class="row">
                       <div class="col-sm-6">
-                        <a href="{{route('alatb.show', ['alatb' => $isi->id_bahan_alat])}}" class="btn btn-sm btn-primary" title="Detail"> <i class="fas fa-eye"></i> </a>
+                        <a href="{{route('alatb.show', ['alatb' => $isi->id])}}" class="btn btn-sm btn-primary" title="Detail"> <i class="fas fa-eye"></i> </a>
                       </div>
                       
                       <div class="col-sm-6">
-                        <form action="{{route('alatb.destroy', ['alatb' => $isi->id_bahan_alat]) }}" method="POST">
+                        <form action="{{route('alatb.destroy', ['alatb' => $isi->id]) }}" method="POST">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-sm btn-danger" title="Hapus"> <i class="fas fa-trash"></i> </button>
