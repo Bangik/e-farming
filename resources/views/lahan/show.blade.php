@@ -23,12 +23,34 @@
             <div class="table-responsive">
               
               <table class="table align-items-center table-flush">
-                @foreach ($lahan as $key => $value)
-                  <tr>
-                    <td>{{ucfirst($key)}}</td>
-                    <td>: {{ $key == 'created_at' || $key == 'updated_at' ? date('d-m-Y H:i:s', strtotime($value)) : $value }}</td>
-                  </tr>
-                @endforeach
+                <tr>
+                  <th>ID Lahan</th>
+                  <td>: {{ $lahan->id }}</td>
+                </tr>
+                <tr>
+                  <th>Nama Lahan</th>
+                  <td>: {{ $lahan->nama }}</td>
+                </tr>
+                <tr>
+                  <th>Paket Tanam</th>
+                  <td>: {{ $lahan->paket_tanam->nama_paket }}</td>
+                </tr>
+                <tr>
+                  <th>Pemilik</th>
+                  <td>: {{ $lahan->user->nama }}</td>
+                </tr>
+                <tr>
+                  <th>Status</th>
+                  <td>: {{ $lahan->status }}</td>
+                </tr>
+                <tr>
+                  <th>Luas Lahan</th>
+                  <td>: {{ $lahan->luas }} </td>
+                </tr>
+                <tr>
+                  <th>Daerah</th>
+                  <td>: {{ $lahan->daerah }}</td>
+                </tr>
               </table>
             </div>
           </div>

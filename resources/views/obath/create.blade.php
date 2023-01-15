@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Alat dan Bahan')
+@section('title', 'Tambah Jadwal Obat')
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Tambah Alat dan Bahan</h1>
+      <h1 class="h3 mb-0 text-gray-800">Tambah Jadwal Obat</h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{route('lahan.index')}}">Kelola Alat dan Bahan</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Tambah Alat dan Bahan</li>
+        <li class="breadcrumb-item"><a href="{{route('obath.index')}}">Kelola Jadwal Obat</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Tambah Jadwal Obat</li>
       </ol>
     </div>
 
@@ -15,7 +15,7 @@
       <div class="col-xl-12 col-lg-12 mb-4">
         <div class="card">
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Alat dan Bahan</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Tambah Jadwal Obat</h6>
           </div>
 
           <div class="card-body">
@@ -24,14 +24,17 @@
               @csrf
               
                 <div class="form-group">
-                    <label for="nama_obat">Nama Obat</label> <span class="text-danger">*</span>
-                    <input type="text" class="form-control @error('nama_obat') is-invalid @enderror" id="nama_obat" name="nama_obat" value="{{ old('nama_obat') }}">
-                    
-                    @error('nama_obat')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
+                  <label for="alat_bahan_id">Nama Obat</label> <span class="text-danger">* </span>
+                  <select class="form-control @error('alat_bahan_id') is-invalid @enderror" id="alat_bahan_id" name="alat_bahan_id">
+                    @foreach ($obats as $obat)
+                      <option value="{{ $obat->id }}">{{ $obat->nama }}</option>
+                    @endforeach
+                  </select>
+                  @error('alat_bahan_id')
+                  <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
                 </div>
 
                 <div class="form-group">

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJadwalObatHamaTable extends Migration
+class CreateTablePaketTanamAlatTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateJadwalObatHamaTable extends Migration
      */
     public function up()
     {
-        Schema::create('jadwal_obat_hama', function (Blueprint $table) {
+        Schema::create('paket_tanam_alat', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('paket_tanam_id')->constrained('paket_tanam')->onDelete('cascade');
             $table->foreignId('alat_bahan_id')->constrained('alat_bahan')->onDelete('cascade');
-            $table->string('jenis_obat');
-            $table->date('tanggal');
-            $table->string('waktu');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateJadwalObatHamaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jadwal_obat_hama');
+        Schema::dropIfExists('table_paket_tanam_alat');
     }
 }

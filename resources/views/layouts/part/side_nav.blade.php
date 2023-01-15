@@ -11,7 +11,7 @@
     <a class="nav-link" href="{{ route('home') }}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span></a>
-  </li>
+    </li>
 
   <hr class="sidebar-divider">
   <div class="sidebar-heading">
@@ -24,14 +24,21 @@
       <span>Kelola Petani</span>
     </a>
   </li>
-
+  
   <li class="nav-item {{Request::segment(1) == 'alatb' ? 'active' : ''}}">
     <a class="nav-link" href="{{ route('alatb.index') }}">
       <i class="fas fa-snowplow"></i>
       <span>Kelola Alat dan Bahan</span>
     </a>
   </li>
-
+  
+  <li class="nav-item {{Request::segment(1) == 'paket-tanam' ? 'active' : ''}}">
+    <a class="nav-link" href="{{ route('paket-tanam.index') }}">
+      <i class="fas fa-fw fa-box"></i>
+      <span>Kelola Paket Tanam</span>
+    </a>
+  </li>
+  
   <li class="nav-item {{Request::segment(1) == 'lahan' ? 'active' : ''}}">
     <a class="nav-link" href="{{ route('lahan.index') }}">
       <i class="fas fa-fw fa-map"></i>
@@ -42,12 +49,6 @@
     <a class="nav-link" href="{{ route('obath.index') }}">
       <i class="fas fa-skull-crossbones"></i>
       <span>Jadwal Obat & Hama</span>
-    </a>
-  </li>
-  <li class="nav-item {{Request::segment(1) == 'paket-tanam' ? 'active' : ''}}">
-    <a class="nav-link" href="{{ route('paket-tanam.index') }}">
-      <i class="fas fa-fw fa-box"></i>
-      <span>Kelola Paket Tanam</span>
     </a>
   </li>
   <hr class="sidebar-divider">

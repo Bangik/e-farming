@@ -44,6 +44,20 @@
                 @enderror
               </div>
               <div class="form-group">
+                <label for="paket_tanam_id">Pilih Paket Tanam</label> <span class="text-danger">*</span>
+                <select class="form-control @error('paket_tanam_id') is-invalid @enderror" id="paket_tanam_id" name="paket_tanam_id">
+                  <option value="">Pilih Paket Tanam untuk Lahan</option>
+                  @foreach ($paket_tanams as $paket_tanam)
+                  <option value="{{ $paket_tanam->id }}" {{ old('paket_tanam_id') == $paket_tanam->id ? 'selected' : '' }}>{{ $paket_tanam->nama_paket }}</option>
+                  @endforeach
+                </select>
+                @error('paket_tanam_id')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+              <div class="form-group">
                 <label for="status">Status</label> <span class="text-danger">*</span>
                 <input type="text" class="form-control @error('status') is-invalid @enderror" id="status" name="status" value="{{ old('status') }}">
                 @error('status')

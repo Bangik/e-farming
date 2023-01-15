@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Data Detail Lahan')
+@section('title', 'Data Detail Jadwal Obat')
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Data Detail Obat Hama</h1>
+      <h1 class="h3 mb-0 text-gray-800">Data Detail Jadwal Obat</h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{route('alatb.index')}}">Kelola Obat Hama</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Data Detail Obat Hama</li>
+        <li class="breadcrumb-item"><a href="{{route('obath.index')}}">Kelola Jadwal Obat</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data Detail Jadwal Obat</li>
       </ol>
     </div>
 
@@ -15,8 +15,8 @@
       <div class="col-xl-12 col-lg-12 mb-4">
         <div class="card">
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Data Detail Obat Hama</h6>
-            <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('obath.edit', ['obath' => $id]) }}">Edit Data <i
+            <h6 class="m-0 font-weight-bold text-primary">Data Detail Jadwal Obat</h6>
+            <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('obath.edit', ['obath' => $obathama->id]) }}">Edit Data <i
                 class="fas fa-edit"></i></a>
           </div>
           
@@ -25,28 +25,28 @@
               <table class="table align-items-center table-flush">
                 
                   <tr>
-                    <td>id</td>
-                    <td>: {{$id}}</td>
+                    <td>ID</td>
+                    <td>: {{$obathama->id}}</td>
                   </tr>
                   
                   <tr>
-                    <td>Kategori</td>
-                    <td>: {{$namao}}</td>
+                    <td>Nama Obat</td>
+                    <td>: {{$obathama->alatbahan->nama}}</td>
                   </tr>
 
                   <tr>
-                    <td>Bahan / Alat</td>
-                    <td>: {{$jenis}}</td>
+                    <td>Jenis Obat</td>
+                    <td>: {{$obathama->jenis_obat}}</td>
                   </tr>
 
                   <tr>
-                    <td>Satuan</td>
-                    <td>: {{$tgl}}</td> 
+                    <td>Tanggal</td>
+                    <td>: {{date('d M Y', strtotime($obathama->tanggal))}}</td> 
                   </tr>
 
                   <tr>
-                    <td>Satuan</td>
-                    <td>: {{$waktu}}</td> 
+                    <td>Waktu</td>
+                    <td>: {{$obathama->waktu}}</td> 
                   </tr>
 
               </table>

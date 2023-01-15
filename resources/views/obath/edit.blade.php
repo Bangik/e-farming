@@ -23,11 +23,15 @@
               @csrf
               {{-- @method('PUT') --}}
               <div class="form-group">
-                <label for="nama_obat">nama Obat</label> <span class="text-danger">*</span>
-                <input type="text" class="form-control @error('nama_obat') is-invalid @enderror" id="nama_obat" name="nama_obat" value="{{$namao}}">
-                @error('nama_obat')
+                <label for="alat_bahan_id">Nama Obat</label> <span class="text-danger">* </span>
+                <select class="form-control @error('alat_bahan_id') is-invalid @enderror" id="alat_bahan_id" name="alat_bahan_id">
+                  @foreach ($obats as $obat)
+                    <option value="{{$obat->id}}" @if($obat->id == $alat_bahan_id) selected @endif>{{$obat->nama}}</option>
+                  @endforeach
+                </select>
+                @error('alat_bahan_id')
                 <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
+                <strong>{{ $message }}</strong>
                 </span>
                 @enderror
               </div>

@@ -15,6 +15,7 @@ class CreateLahanTable extends Migration
     {
         Schema::create('lahan', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('paket_tanam_id')->constrained('paket_tanam')->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('nama');
             $table->string('status');

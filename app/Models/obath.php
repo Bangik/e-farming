@@ -13,7 +13,7 @@ class obath extends Model
     protected $table = 'jadwal_obat_hama';
 
     protected $fillable = [
-        'nama_obat',
+        'alat_bahan_id',
         'jenis_obat',
         'tanggal',
         'waktu',
@@ -21,7 +21,7 @@ class obath extends Model
 
     public static function insert($request){
         $request->validate([
-            'nama_obat' => 'required',
+            'alat_bahan_id' => 'required',
             'jenis_obat' => 'required',
             'tanggal' => 'required',
             'waktu' => 'required',
@@ -29,11 +29,15 @@ class obath extends Model
         
         // insert sql
         DB::table('jadwal_obat_hama')->insert([
-            'nama_obat' => $request->nama_obat,
+            'alat_bahan_id' => $request->alat_bahan_id,
             'jenis_obat' => $request->jenis_obat,
             'tanggal' => $request->tanggal,
             'waktu' => $request->waktu,
         ]);
+    }
+
+    public function alatbahan(){
+        return $this->belongsTo(alat_bahan::class, 'alat_bahan_id', 'id');
     }
 
 
