@@ -51,7 +51,7 @@
 
                   <tr>
                     <td>Harga</td>
-                    <td>: {{$harga}}</td>
+                    <td>: @currency($harga)</td>
                   </tr>
 
               </table>

@@ -45,7 +45,7 @@
                   <td>{{$isi->nama}}</td>
                   <td>{{$isi->stok}}</td>
                   <td>{{$isi->satuan}}</td>
-                  <td>{{$isi->harga}}</td>
+                  <td>@currency($isi->harga)</td>
                   <td>
                     <div class="row">
                       <div class="col-sm-6">
