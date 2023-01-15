@@ -95,51 +95,29 @@
             <h6 class="m-0 font-weight-bold text-primary">Stok</h6>
           </div>
           <div class="card-body">
+            @foreach ($stoks as $stok)
             <div class="mb-3">
-              <div class="small text-gray-500">Pacul 90'Editions
-                <div class="small float-right"><b>600 of 800 Items</b></div>
+              <div class="small text-gray-500">{{$stok->nama}}
+                <div class="small float-right"><b>{{$stok->stok}} of 100 {{$stok->satuan}}</b></div>
               </div>
-              <div class="progress" style="height: 12px;">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 80%" aria-valuenow="80"
-                  aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+              @if ($stok->stok < 3)
+                <div class="progress" style="height: 12px;">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: {{$stok->stok}}%" aria-valuenow="{{$stok->stok}}"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              @elseif ($stok->stok <= 5)
+                <div class="progress" style="height: 12px;">
+                  <div class="progress-bar bg-warning" role="progressbar" style="width: {{$stok->stok}}%" aria-valuenow="{{$stok->stok}}"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              @else
+                <div class="progress" style="height: 12px;">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: {{$stok->stok}}%" aria-valuenow="{{$stok->stok}}"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              @endif
             </div>
-            <div class="mb-3">
-              <div class="small text-gray-500">Gundam 90'Editions
-                <div class="small float-right"><b>500 of 800 Items</b></div>
-              </div>
-              <div class="progress" style="height: 12px;">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70"
-                  aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <div class="small text-gray-500">Rounded Hat
-                <div class="small float-right"><b>455 of 800 Items</b></div>
-              </div>
-              <div class="progress" style="height: 12px;">
-                <div class="progress-bar bg-danger" role="progressbar" style="width: 55%" aria-valuenow="55"
-                  aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <div class="small text-gray-500">Indomie Goreng
-                <div class="small float-right"><b>400 of 800 Items</b></div>
-              </div>
-              <div class="progress" style="height: 12px;">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <div class="small text-gray-500">Remote Control Car Racing
-                <div class="small float-right"><b>200 of 800 Items</b></div>
-              </div>
-              <div class="progress" style="height: 12px;">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30"
-                  aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </div>

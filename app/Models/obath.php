@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class obath extends Model
 {
+    use HasFactory;
+
+    protected $table = 'jadwal_obat_hama';
+
+    protected $fillable = [
+        'nama_obat',
+        'jenis_obat',
+        'tanggal',
+        'waktu',
+    ];
 
     public static function insert($request){
         $request->validate([
