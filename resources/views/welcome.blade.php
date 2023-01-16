@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Website e-farming">
+    <meta name="author" content="owner">
     <title>{{ config('app.name') }} - Selamat Datang</title>
     <!-- Font Family-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- AOS css-->
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
+    <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
 </head>
 
 <body data-offset="50" data-spy="scroll" data-target=".navbar" >
@@ -56,14 +57,15 @@
                                 <li><a href="/">Home</a></li>
                                 <li><a href="#">Menu</a>
                                     <ul>
-                                        <li><a href="#">Lahan</a></li>
-                                        <li><a href="#">Paket Tanam</a></li>
+                                        <li><a href="{{route('lahan.index')}}">Lahan</a></li>
+                                        <li><a href="{{route('paket-tanam.index')}}">Paket Tanam</a></li>
+                                        <li><a href="{{route('laporan.index')}}">Laporan Hasil Panen</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Fitur</a>
                                     <ul>
-                                        <li><a href="#">Alat dan Bahan</a></li>
-                                        <li><a href="#">Jadwal Obat dan Hama</a></li>
+                                        <li><a href="{{route('alatb.index')}}">Alat dan Bahan</a></li>
+                                        <li><a href="{{route('obath.index')}}">Jadwal Obat dan Hama</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="{{route('login')}}">Masuk</a></li>
@@ -212,7 +214,7 @@
                         <div class="col-sm-6 center-content unset-height">
                             <ul class="icon-collection" data-aos="fade-left" data-aos-duration="500">
                                 <li class="about-icon">
-                                    <a class="center-content" href="#"><img alt=""
+                                    <a class="center-content" href="{{route('lahan.index')}}"><img alt=""
                                                                             src="{{asset('img/1.png')}}">
                                         <h5>Rencana Tanam</h5>
                                     </a>
@@ -222,13 +224,13 @@
                         <div class="col-sm-6 center-content unset-height">
                             <ul class="icon-collection" data-aos="fade-left" data-aos-duration="2000">
                                 <li class="about-icon">
-                                    <a class="center-content" href="#"><img alt=""
+                                    <a class="center-content" href="{{route('laporan.index')}}"><img alt=""
                                                                             src="{{asset('img/2.png')}}">
                                         <h5>Laporan Panen</h5>
                                     </a>
                                 </li>
                                 <li class="about-icon">
-                                    <a class="center-content" href="#"><img alt=""
+                                    <a class="center-content" href="{{route('paket-tanam.index')}}"><img alt=""
                                                                             src="{{asset('img/3.png')}}">
                                         <h5>Rencana Paket Tanam</h5>
                                     </a>
@@ -289,10 +291,13 @@
                         <div>
                             <ul class="footer-lists op-text">
                                 <li>
-                                    <a href="#">Lahan</a>
+                                    <a href="{{route('lahan.index')}}">Lahan</a>
                                 </li>
                                 <li>
-                                    <a href="#">Paket Tanam</a>
+                                    <a href="{{route('paket-tanam.index')}}">Paket Tanam</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('laporan.index')}}">Laporan Hasil Panen</a>
                                 </li>
                             </ul>
                         </div>
@@ -307,10 +312,10 @@
                         <div>
                             <ul class="footer-lists op-text">
                                 <li>
-                                    <a href="#">Alat dan Bahan</a>
+                                    <a href="{{route('alatb.index')}}">Alat dan Bahan</a>
                                 </li>
                                 <li>
-                                    <a href="#">Jadwal Obat dan Hama</a>
+                                    <a href="{{route('obath.index')}}">Jadwal Obat dan Hama</a>
                                 </li>
                             </ul>
                         </div>
@@ -326,7 +331,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div>
-                        <h6 class="copyright-text text-white text-right">Copyright ©2019 Owner                        </h6>
+                        <h6 class="copyright-text text-white text-right">Copyright ©{{date('Y', strtotime(now()))}} Owner                        </h6>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Alat_BahanController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LahanController;
 use App\Http\Controllers\LaporanPanenController;
@@ -26,7 +27,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::resource('lahan', LahanController::class, ['except' => ['index','show']]);
@@ -52,4 +53,6 @@ Route::get('paket-tanam', [PaketTanamController::class, 'index'])->name('paket-t
 Route::get('paket-tanam/{paket_tanam}', [PaketTanamController::class, 'show'])->name('paket-tanam.show');
 Route::get('laporan', [LaporanPanenController::class, 'index'])->name('laporan.index');
 Route::get('laporan/{laporan}', [LaporanPanenController::class, 'show'])->name('laporan.show');
+Route::get('ganti-password', [HomeController::class, 'change_password'])->name('ganti-password.index');
+Route::post('ganti-password', [HomeController::class, 'update_password'])->name('ganti-password.update');
 

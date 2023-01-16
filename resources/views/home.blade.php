@@ -34,7 +34,7 @@
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-uppercase mb-1">Jumlah Panen</div>
-                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">123</div>
+                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$panen}}</div>
               </div>
               <div class="col-auto">
                 <i class="fas fa-chart-line fa-2x text-success"></i>
@@ -210,5 +210,88 @@
 
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha512-mf78KukU/a8rjr7aBRvCa2Vwg/q0tUjJhLtcK53PHEbFwCEqQ5durlzvVTgQgKpv+fyNMT6ZQT1Aq6tpNqf1mg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="{{ asset('js/chart-area-demo.js') }}"></script>
+<script>
+  Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+  Chart.defaults.global.defaultFontColor = '#858796';
+
+  var ctx = document.getElementById("myAreaChart");
+  var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [{!!$laporan_bulanan->pluck('bulan')->map(function($bulan) {return "'$bulan'";})->implode(',')!!}],
+      datasets: [{
+        label: "Earnings",
+        lineTension: 0.3,
+        backgroundColor: "rgba(78, 115, 223, 0.5)",
+        borderColor: "rgba(78, 115, 223, 1)",
+        pointRadius: 3,
+        pointBackgroundColor: "rgba(78, 115, 223, 1)",
+        pointBorderColor: "rgba(78, 115, 223, 1)",
+        pointHoverRadius: 3,
+        pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+        pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+        pointHitRadius: 10,
+        pointBorderWidth: 2,
+        data: [{!!$laporan_bulanan->pluck('jumlah')->implode(',')!!}],
+      }],
+    },
+    options: {
+      maintainAspectRatio: false,
+      layout: {
+        padding: {
+          left: 10,
+          right: 25,
+          top: 25,
+          bottom: 0
+        }
+      },
+      scales: {
+        xAxes: [{
+          time: {
+            unit: 'date'
+          },
+          gridLines: {
+            display: false,
+            drawBorder: false
+          },
+          ticks: {
+            maxTicksLimit: 7
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            maxTicksLimit: 5,
+            padding: 10,
+          },
+          gridLines: {
+            color: "rgb(234, 236, 244)",
+            zeroLineColor: "rgb(234, 236, 244)",
+            drawBorder: false,
+            borderDash: [2],
+            zeroLineBorderDash: [2]
+          }
+        }],
+      },
+      legend: {
+        display: false
+      },
+      tooltips: {
+        backgroundColor: "rgb(255,255,255)",
+        bodyFontColor: "#858796",
+        titleMarginBottom: 10,
+        titleFontColor: '#6e707e',
+        titleFontSize: 14,
+        borderColor: '#dddfeb',
+        borderWidth: 1,
+        xPadding: 15,
+        yPadding: 15,
+        displayColors: false,
+        intersect: false,
+        mode: 'index',
+        caretPadding: 10,
+      }
+    }
+  });
+</script>
+{{-- <script src="{{ asset('js/chart-area-demo.js') }}"></script> --}}
 @endsection

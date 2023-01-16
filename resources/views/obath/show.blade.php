@@ -27,27 +27,27 @@
               <table class="table align-items-center table-flush">
                 
                   <tr>
-                    <td>ID</td>
+                    <th>ID</th>
                     <td>: {{$obathama->id}}</td>
                   </tr>
                   
                   <tr>
-                    <td>Nama Obat</td>
+                    <th>Nama Obat</th>
                     <td>: {{$obathama->alatbahan->nama}}</td>
                   </tr>
 
                   <tr>
-                    <td>Jenis Obat</td>
+                    <th>Jenis Obat</th>
                     <td>: {{$obathama->jenis_obat}}</td>
                   </tr>
 
                   <tr>
-                    <td>Tanggal</td>
+                    <th>Tanggal</th>
                     <td>: {{date('d M Y', strtotime($obathama->tanggal))}}</td> 
                   </tr>
 
                   <tr>
-                    <td>Waktu</td>
+                    <th>Waktu</th>
                     <td>: {{$obathama->waktu}}</td> 
                   </tr>
 

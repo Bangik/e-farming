@@ -1,7 +1,7 @@
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
     <div class="sidebar-brand-icon">
-      <img src="img/logo.png">
+      <img src="{{asset('img/logo.png')}}">
     </div>
     {{-- <div class="sidebar-brand-text mx-3">E-Farming</div> --}}
   </a>
@@ -58,7 +58,7 @@
     Laporan
   </div>
 
-  <li class="nav-item">
+  <li class="nav-item {{Request::segment(1) == 'laporan' ? 'active' : ''}}">
     <a class="nav-link" href="{{route('laporan.index')}}">
       <i class="fas fa-fw fa-calendar"></i>
       <span>Laporan Hasil Panen</span>
