@@ -22,12 +22,34 @@
           <div class="card-body">
             <div class="table-responsive">
               <table class="table align-items-center table-flush">
-                @foreach ($user as $key => $value)
-                  <tr>
-                    <td>{{ucfirst($key)}}</td>
-                    <td>: {{ $key == 'created_at' || $key == 'updated_at' ? date('d-m-Y H:i:s', strtotime($value)) : $value }}</td>
-                  </tr>
-                @endforeach
+                <tr>
+                  <th>ID</th>
+                  <td>{{$user->id}}</td>
+                </tr>
+                <tr>
+                  <th>Nama</th>
+                  <td>{{$user->nama}}</td>
+                </tr>
+                <tr>
+                  <th>Username</th>
+                  <td>{{$user->username}}</td>
+                </tr>
+                <tr>
+                  <th>Status</th>
+                  <td>{{$user->status}}</td>
+                </tr>
+                <tr>
+                  <th>Telepon</th>
+                  <td>{{$user->telepon}}</td>
+                </tr>
+                <tr>
+                  <th>Alamat</th>
+                  <td>{{$user->alamat}}</td>
+                </tr>
+                <tr>
+                  <th>Jenis Kelamin</th>
+                  <td>{{$user->jenis_kelamin}}</td>
+                </tr>
               </table>
             </div>
           </div>

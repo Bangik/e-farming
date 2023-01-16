@@ -27,32 +27,32 @@
               <table class="table align-items-center table-flush">
                 
                   <tr>
-                    <td>id</td>
+                    <th>ID</th>
                     <td>: {{$id}}</td>
                   </tr>
                   
                   <tr>
-                    <td>Kategori</td>
+                    <th>Kategori</th>
                     <td>: {{$ba}}</td>
                   </tr>
 
                   <tr>
-                    <td>Bahan / Alat</td>
+                    <th>Bahan / Alat</th>
                     <td>: {{$kategori}}</td>
                   </tr>
 
                   <tr>
-                    <td>Stok</td>
+                    <th>Stok</th>
                     <td>: {{$stok}}</td>
                   </tr>
 
                   <tr>
-                    <td>Satuan</td>
+                    <th>Satuan</td>
                     <td>: {{$satuan}}</td> 
                   </tr>
 
                   <tr>
-                    <td>Harga</td>
+                    <th>Harga</th>
                     <td>: @currency($harga)</td>
                   </tr>
 
