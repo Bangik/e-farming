@@ -29,4 +29,9 @@ class Lahan extends Model
     {
         return $this->belongsTo(PaketTanam::class);
     }
+
+    public function laporan_panen()
+    {
+        return $this->hasMany(LaporanPanen::class);
+    }
 }
