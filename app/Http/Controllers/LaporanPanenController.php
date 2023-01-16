@@ -16,9 +16,8 @@ class LaporanPanenController extends Controller
 
     public function create()
     {
-        $lahan = Lahan::all();
-        dd($lahan);
-        return view('laporan_panen.create', compact('lahan'));
+        $lahans = Lahan::all();
+        return view('laporan_panen.create', compact('lahans'));
     }
 
     public function store(Request $request)
@@ -32,21 +31,23 @@ class LaporanPanenController extends Controller
         ]);
 
         LaporanPanen::create($request->all());
-        return redirect()->route('laporan-panen.index')->with('success', 'Laporan Panen Berhasil Ditambahkan');
+        return redirect()->route('laporan.index')->with('success', 'Laporan Panen Berhasil Ditambahkan');
     }
 
-    public function show(LaporanPanen $laporan_panen)
+    public function show($laporan)
     {
-        return view('laporan_panen.show', compact('laporan_panen'));
+        $laporan = LaporanPanen::find($laporan);
+        return view('laporan_panen.show', compact('laporan'));
     }
 
-    public function edit(LaporanPanen $laporan_panen)
+    public function edit($laporan)
     {
-        $lahan = Lahan::all();
-        return view('laporan_panen.edit', compact('laporan_panen', 'lahan'));
+        $lahans = Lahan::all();
+        $laporan = LaporanPanen::find($laporan);
+        return view('laporan_panen.edit', compact('laporan', 'lahans'));
     }
 
-    public function update(Request $request, LaporanPanen $laporan_panen)
+    public function update(Request $request, $laporan)
     {
         $request->validate([
             'lahan_id' => 'required',
@@ -56,13 +57,13 @@ class LaporanPanenController extends Controller
             'harga' => 'required',
         ]);
 
-        $laporan_panen->update($request->all());
-        return redirect()->route('laporan-panen.index')->with('success', 'Laporan Panen Berhasil Diubah');
+        LaporanPanen::find($laporan)->update($request->all());
+        return redirect()->route('laporan.index')->with('success', 'Laporan Panen Berhasil Diubah');
     }
 
-    public function destroy(LaporanPanen $laporan_panen)
+    public function destroy($laporan)
     {
-        $laporan_panen->delete();
-        return redirect()->route('laporan-panen.index')->with('success', 'Laporan Panen Berhasil Dihapus');
+        LaporanPanen::find($laporan)->delete();
+        return redirect()->route('laporan.index')->with('success', 'Laporan Panen Berhasil Dihapus');
     }
 }
