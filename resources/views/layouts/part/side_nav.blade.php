@@ -59,9 +59,9 @@
   </div>
 
   <li class="nav-item">
-    <a class="nav-link" href="charts.html">
+    <a class="nav-link" href="{{route('laporan.index')}}">
       <i class="fas fa-fw fa-calendar"></i>
-      <span>Laporan Penanaman</span>
+      <span>Laporan Hasil Panen</span>
     </a>
   </li>
 
