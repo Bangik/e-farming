@@ -49,4 +49,9 @@ class alat_bahan extends Model
         return $this->hasMany(obath::class, 'alat_bahan_id', 'id');
     }
 
+    public function jadwal_pupuk()
+    {
+        return $this->hasMany(JadwalPupuk::class, 'alat_bahan_id', 'id');
+    }
+
 }
