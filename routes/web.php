@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Alat_BahanController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JadwalPupukController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LahanController;
 use App\Http\Controllers\LaporanPanenController;
@@ -36,6 +37,7 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::resource('obath', ObathController::class, ['except' => ['index','show','update']]);
     Route::resource('paket-tanam', PaketTanamController::class, ['except' => ['index','show']]);
     Route::resource('laporan', LaporanPanenController::class, ['except' => ['index','show']]);
+    Route::resource('jadwal-pupuk', JadwalPupukController::class, ['except' => ['index','show']]);
     //Update Alat Bahan
     Route::post('alatb2/update/{id}', 'App\Http\Controllers\Alat_BahanController@update');
     //Update Obat Hama
@@ -53,6 +55,8 @@ Route::get('paket-tanam', [PaketTanamController::class, 'index'])->name('paket-t
 Route::get('paket-tanam/{paket_tanam}', [PaketTanamController::class, 'show'])->name('paket-tanam.show');
 Route::get('laporan', [LaporanPanenController::class, 'index'])->name('laporan.index');
 Route::get('laporan/{laporan}', [LaporanPanenController::class, 'show'])->name('laporan.show');
-Route::get('ganti-password', [HomeController::class, 'change_password'])->name('ganti-password.index');
-Route::post('ganti-password', [HomeController::class, 'update_password'])->name('ganti-password.update');
+Route::get('jadwal-pupuk', [JadwalPupukController::class, 'index'])->name('jadwal-pupuk.index');
+Route::get('jadwal-pupuk/{jadwal_pupuk}', [JadwalPupukController::class, 'show'])->name('jadwal-pupuk.show');
+Route::get('ganti-password', [HomeController::class, 'change_password'])->middleware('auth')->name('ganti-password.index');
+Route::post('ganti-password', [HomeController::class, 'update_password'])->middleware('auth')->name('ganti-password.update');
 

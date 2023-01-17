@@ -49,8 +49,14 @@
   </li>
   <li class="nav-item {{Request::segment(1) == 'obath' ? 'active' : ''}}">
     <a class="nav-link" href="{{ route('obath.index') }}">
-      <i class="fas fa-skull-crossbones"></i>
+      <i class="fas fa-calendar"></i>
       <span>Jadwal Obat & Hama</span>
+    </a>
+  </li>
+  <li class="nav-item {{Request::segment(1) == 'jadwal-pupuk' ? 'active' : ''}}">
+    <a class="nav-link" href="{{ route('jadwal-pupuk.index') }}">
+      <i class="fas fa-calendar"></i>
+      <span>Jadwal Pupuk</span>
     </a>
   </li>
   <hr class="sidebar-divider">
