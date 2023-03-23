@@ -19,9 +19,9 @@
           </div>
 
           <div class="card-body">
-            <form action="{{url('alatb2/update')}}/{{$id}}"  method="POST">
+            <form action="{{route('alatb.update', $id)}}"  method="POST">
               @csrf
-              {{-- @method('PUT') --}}
+              @method('PUT')
               <div class="form-group">
                 <label for="Kategori">Kategori</label> <span class="text-danger">*</span>
                     <select class="form-control @error('Kategori') is-invalid @enderror" id="Kategori" name="kategori">
