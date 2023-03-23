@@ -27,7 +27,7 @@ class ObathController extends Controller
         obath::insert($request);
 
         return redirect()->route('obath.index')
-            ->with('success', 'Tersimpan!');
+            ->with('success', 'Data berhasil ditambahkan');
     }
 
     public function update(Request $request, $id)
