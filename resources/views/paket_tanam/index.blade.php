@@ -15,10 +15,8 @@
         <div class="card">
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-primary">Daftar Paket Tanam</h6>
-            @admin
             <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('paket-tanam.create') }}">Tambah Paket Tanam <i
                 class="fas fa-plus"></i></a>
-            @endadmin
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -40,7 +38,6 @@
                         <div class="col-sm-6">
                           <a href="{{route('paket-tanam.show', ['paket_tanam' => $paket_tanam])}}" class="btn btn-sm btn-primary" title="Detail"> <i class="fas fa-eye"></i> </a>
                         </div>
-                        @admin
                         <div class="col-sm-6">
                           <form action="{{route('paket-tanam.destroy', ['paket_tanam' => $paket_tanam])}}" method="POST">
                             @csrf
@@ -48,7 +45,6 @@
                             <button type="submit" class="btn btn-sm btn-danger" title="Hapus"> <i class="fas fa-trash"></i> </button>
                           </form>
                         </div>
-                        @endadmin
                       </div>
                     </td>
                   </tr>                  

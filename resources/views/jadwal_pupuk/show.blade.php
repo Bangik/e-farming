@@ -16,10 +16,8 @@
         <div class="card">
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-primary">Data Detail Jadwal Pupuk</h6>
-            @admin
             <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('jadwal-pupuk.edit', ['jadwal_pupuk' => $jadwal_pupuk->id]) }}">Edit Data <i
                 class="fas fa-edit"></i></a>
-            @endadmin
           </div>
           <div class="card-body">
             <div class="table-responsive">

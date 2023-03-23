@@ -19,9 +19,9 @@
           </div>
 
           <div class="card-body">
-            <form action="{{url('obath2/update')}}/{{$id}}"  method="POST">
+            <form action="{{route('obath.update', $id)}}"  method="POST">
               @csrf
-              {{-- @method('PUT') --}}
+              @method('PUT')
               <div class="form-group">
                 <label for="alat_bahan_id">Nama Obat</label> <span class="text-danger">* </span>
                 <select class="form-control @error('alat_bahan_id') is-invalid @enderror" id="alat_bahan_id" name="alat_bahan_id">

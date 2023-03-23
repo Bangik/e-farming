@@ -24,7 +24,7 @@ class Alat_BahanController extends Controller
         alat_bahan::insert($request);
 
         return redirect()->route('alatb.index')
-            ->with('success', 'Tersimpan!');
+            ->with('success', 'Data berhasil ditambahkan');
     }
 
     public function update(Request $request, $id)
