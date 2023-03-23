@@ -36,15 +36,6 @@
                 @enderror
               </div>
               <div class="form-group">
-                <label for="total">Total Penanaman</label> <span class="text-danger">*</span>
-                <input type="text" class="form-control @error('total') is-invalid @enderror" id="total" name="total" value="{{ $jadwal_pupuk->total }}">
-                @error('total')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-              </div>
-              <div class="form-group">
                 <label for="tanggal">Tanggal Tanam</label> <span class="text-danger">*</span>
                 <input type="date" class="form-control @error('tanggal') is-invalid @enderror" id="tanggal" name="tanggal" value="{{ $jadwal_pupuk->tanggal }}">
                 @error('tanggal')
@@ -54,9 +45,9 @@
                 @enderror
               </div>
               <div class="form-group">
-                <label for="status">Status</label> <span class="text-danger">*</span>
-                <input type="text" class="form-control @error('status') is-invalid @enderror" id="status" name="status" value="{{ $jadwal_pupuk->status }}">
-                @error('status')
+                <label for="waktu">Waktu</label> <span class="text-danger">*</span>
+                <input type="time" class="form-control @error('waktu') is-invalid @enderror" id="waktu" name="waktu" value="{{ $jadwal_pupuk->waktu }}">
+                @error('waktu')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
                 </span>

@@ -16,9 +16,8 @@ class CreateJadwalPupukTable extends Migration
         Schema::create('jadwal_pupuk', function (Blueprint $table) {
             $table->id();
             $table->foreignId('alat_bahan_id')->constrained('alat_bahan')->onDelete('cascade');
-            $table->string('total');
             $table->date('tanggal');
-            $table->string('status');
+            $table->string('waktu');
             $table->timestamps();
         });
     }

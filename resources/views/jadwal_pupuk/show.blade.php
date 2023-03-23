@@ -31,16 +31,12 @@
                   <td>: {{ $jadwal_pupuk->alat_bahan->nama }}</td>
                 </tr>
                 <tr>
-                  <th>Total Penanaman</th>
-                  <td>: {{ $jadwal_pupuk->total }}</td>
-                </tr>
-                <tr>
                   <th>Tanggal</th>
                   <td>: {{ date('d M Y', strtotime($jadwal_pupuk->tanggal)) }}</td>
                 </tr>
                 <tr>
-                  <th>Status</th>
-                  <td>: {{ $jadwal_pupuk->status }}</td>
+                  <th>Waktu</th>
+                  <td>: {{ $jadwal_pupuk->waktu }}</td>
                 </tr>
               </table>
             </div>
