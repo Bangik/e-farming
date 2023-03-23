@@ -30,7 +30,7 @@ class JadwalPupukController extends Controller
         ]);
 
         JadwalPupuk::create($request->all());
-        return redirect()->route('jadwal-pupuk.index')->with('status', 'Data berhasil ditambahkan!');
+        return redirect()->route('jadwal-pupuk.index')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function show($jadwal_pupuk)
@@ -61,12 +61,12 @@ class JadwalPupukController extends Controller
                 'tanggal' => $request->tanggal,
                 'status' => $request->status
             ]);
-        return redirect()->route('jadwal-pupuk.index')->with('status', 'Data berhasil diubah!');
+        return redirect()->route('jadwal-pupuk.index')->with('success', 'Data berhasil diupdate');
     }
 
     public function destroy($jadwal_pupuk)
     {
         JadwalPupuk::destroy($jadwal_pupuk);
-        return redirect()->route('jadwal-pupuk.index')->with('status', 'Data berhasil dihapus!');
+        return redirect()->route('jadwal-pupuk.index')->with('success', 'Data berhasil dihapus');
     }
 }

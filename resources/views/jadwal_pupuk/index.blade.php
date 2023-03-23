@@ -15,10 +15,8 @@
         <div class="card">
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-primary">Daftar Jadwal Pupuk</h6>
-            @admin
             <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('jadwal-pupuk.create') }}">Tambah Jadwal Pupuk <i
                 class="fas fa-plus"></i></a>
-            @endadmin
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -46,7 +44,6 @@
                         <div class="col-sm-6">
                           <a href="{{route('jadwal-pupuk.show', ['jadwal_pupuk' => $jadwal_pupuk->id])}}" class="btn btn-sm btn-primary" title="Detail"> <i class="fas fa-eye"></i> </a>
                         </div>
-                        @admin
                         <div class="col-sm-6">
                           <form action="{{route('jadwal-pupuk.destroy', ['jadwal_pupuk' => $jadwal_pupuk->id])}}" method="POST">
                             @csrf
@@ -54,7 +51,6 @@
                             <button type="submit" class="btn btn-sm btn-danger" title="Hapus"> <i class="fas fa-trash"></i> </button>
                           </form>
                         </div>
-                        @endadmin
                       </div>
                     </td>
                   </tr>                  
