@@ -62,7 +62,7 @@ class PaketTanamController extends Controller
         $paket_tanam->alat_bahan()->sync($request->alat_bahan);
 
         return redirect()->route('paket-tanam.index')
-            ->with('success', 'Paket Tana berhasil diupdate');
+            ->with('success', 'Paket Tanam berhasil diupdate');
     }
 
     public function destroy(PaketTanam $paket_tanam)
