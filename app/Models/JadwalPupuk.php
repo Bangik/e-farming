@@ -13,9 +13,8 @@ class JadwalPupuk extends Model
 
     protected $fillable = [
         'alat_bahan_id',
-        'total',
         'tanggal',
-        'status',
+        'waktu',
     ];
 
     public function alat_bahan()

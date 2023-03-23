@@ -24,9 +24,8 @@ class JadwalPupukController extends Controller
     {
         $request->validate([
             'alat_bahan_id' => 'required',
-            'total' => 'required|numeric',
             'tanggal' => 'required',
-            'status' => 'required'
+            'waktu' => 'required'
         ]);
 
         JadwalPupuk::create($request->all());
@@ -49,18 +48,11 @@ class JadwalPupukController extends Controller
     {
         $request->validate([
             'alat_bahan_id' => 'required',
-            'total' => 'required|numeric',
             'tanggal' => 'required',
-            'status' => 'required'
+            'waktu' => 'required'
         ]);
 
-        JadwalPupuk::where('id', $jadwal_pupuk)
-            ->update([
-                'alat_bahan_id' => $request->alat_bahan_id,
-                'total' => $request->total,
-                'tanggal' => $request->tanggal,
-                'status' => $request->status
-            ]);
+        JadwalPupuk::find($jadwal_pupuk)->update($request->all());
         return redirect()->route('jadwal-pupuk.index')->with('success', 'Data berhasil diupdate');
     }
 

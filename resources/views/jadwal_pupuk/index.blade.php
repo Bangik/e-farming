@@ -25,9 +25,8 @@
                   <tr>
                     <th>ID</th>
                     <th>Nama Tanaman</th>
-                    <th>Total Penanaman</th>
                     <th>Tanggal</th>
-                    <th>Status</th>
+                    <th>Waktu</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -36,9 +35,8 @@
                   <tr>
                     <td>{{$jadwal_pupuk->id}}</td>
                     <td>{{$jadwal_pupuk->alat_bahan->nama}}</td>
-                    <td>{{$jadwal_pupuk->total}}</td>
                     <td>{{date('d M Y', strtotime($jadwal_pupuk->tanggal))}}</td>
-                    <td>{{$jadwal_pupuk->status}}</td>
+                    <td>{{$jadwal_pupuk->waktu}}</td>
                     <td>
                       <div class="row">
                         <div class="col-sm-6">
