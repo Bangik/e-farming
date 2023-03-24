@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'Kelola Alat dan Bahan')
+@section('title', 'Kelola Alat, Bahan, dan Obat')
 @section('content')
 
   <!-- Sub Header START -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Kelola Alat dan Bahan</h1>
+    <h1 class="h3 mb-0 text-gray-800">Kelola Alat, Bahan, dan Obat</h1>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Kelola Alat dan Bahan</li>
+      <li class="breadcrumb-item active" aria-current="page">Kelola Alat, Bahan, dan Obat</li>
     </ol>
   </div>
   <!-- Sub Header END -->
@@ -19,7 +19,7 @@
       <div class="card">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
           <h6 class="m-0 font-weight-bold text-primary">Daftar Alat dan Bahan</h6>
-          <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('alatb.create') }}">Tambah Alat dan Bahan <i class="fas fa-plus"></i>
+          <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('alatb.create') }}">Tambah Alat, Bahan atau obat <i class="fas fa-plus"></i>
           </a>
         </div>
         <div class="card-body">
@@ -29,6 +29,7 @@
                 <tr>
                   <th>ID</th>
                   <th>Kategori</th>
+                  <th>Jenis</th>
                   <th>Nama Bahan / Alat</th>
                   <th>Stok</th>
                   <th>Satuan</th>
@@ -42,6 +43,7 @@
                 <tr>
                   <td>{{$isi->id}}</td>
                   <td>{{$isi->kategori}}</td>
+                  <td>{{$isi->jenis}}</td>
                   <td>{{$isi->nama}}</td>
                   <td>{{$isi->stok}}</td>
                   <td>{{$isi->satuan}}</td>

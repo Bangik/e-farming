@@ -31,19 +31,14 @@ class Alat_BahanController extends Controller
     {
         $request->validate([
             'nama' => 'required',
+            'jenis' => 'required',
             'kategori' => 'required',
             'satuan' => 'required',
             'stok' => 'required',
             'harga' => 'required'
         ]);
-        // dd($request->kategori);
-        DB::table('alat_bahan')->where('id', $id)->update([
-            'nama' => $request->nama,
-            'kategori' => $request->kategori,
-            'satuan' => $request->satuan,
-            'stok' => $request->stok,
-            'harga' => $request->harga
-        ]);
+        
+        alat_bahan::find($id)->update($request->all());
         
         return redirect()->route('alatb.index')
             ->with('success', 'Data berhasil diupdate');
@@ -56,10 +51,11 @@ class Alat_BahanController extends Controller
         $id = $konten[0]->id;
         $bahan_alat = $konten[0]->nama;
         $kategori = $konten[0]->kategori;
+        $jenis = $konten[0]->jenis;
         $satuan = $konten[0]->satuan;
         $stok = $konten[0]->stok;
         $harga = $konten[0]->harga;
-        return view('alat_bahan.show',['id' => $id, 'ba' => $bahan_alat, 'kategori' => $kategori, 'satuan' => $satuan, 'stok' => $stok, 'harga' => $harga]);
+        return view('alat_bahan.show',['id' => $id, 'ba' => $bahan_alat, 'kategori' => $kategori, 'satuan' => $satuan, 'stok' => $stok, 'harga' => $harga, 'jenis' => $jenis]);
     }
 
     public function edit($alatb)
@@ -68,10 +64,11 @@ class Alat_BahanController extends Controller
         $id = $konten[0]->id;
         $bahan_alat = $konten[0]->nama;
         $kategori = $konten[0]->kategori;
+        $jenis = $konten[0]->jenis;
         $satuan = $konten[0]->satuan;
         $stok = $konten[0]->stok;
         $harga = $konten[0]->harga;
-        return view('alat_bahan.edit', ['id' => $id, 'ba' => $bahan_alat, 'kategori' => $kategori, 'satuan' => $satuan, 'stok' => $stok, 'harga' => $harga]);
+        return view('alat_bahan.edit', ['id' => $id, 'ba' => $bahan_alat, 'kategori' => $kategori, 'satuan' => $satuan, 'stok' => $stok, 'harga' => $harga, 'jenis' => $jenis]);
     }
 
     public function destroy($alatb)

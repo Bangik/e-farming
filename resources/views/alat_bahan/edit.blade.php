@@ -37,6 +37,17 @@
               </div>
 
               <div class="form-group">
+                <label for="jenis">Jenis</label> <span class="text-danger">*</span>     
+                <input type="text" class="form-control @error('jenis') is-invalid @enderror" id="jenis" name="jenis" value="{{ $jenis }}">
+                
+                @error('jenis')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+
+              <div class="form-group">
                 <label for="nama">Nama Bahan Alat</label> <span class="text-danger">*</span>
                 <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{$ba}}">
                 @error('nama')
