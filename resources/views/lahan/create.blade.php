@@ -58,17 +58,17 @@
                 @enderror
               </div>
               <div class="form-group">
-                <label for="status">Status</label> <span class="text-danger">*</span>
-                <input type="text" class="form-control @error('status') is-invalid @enderror" id="status" name="status" value="{{ old('status') }}">
-                @error('status')
+                <label for="jumlah_bibit">Jumlah Bibit</label> <span class="text-danger">*</span>
+                <input type="number" class="form-control @error('jumlah_bibit') is-invalid @enderror" id="jumlah_bibit" name="jumlah_bibit" value="{{ old('jumlah_bibit') }}">
+                @error('jumlah_bibit')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
                 </span>
                 @enderror
               </div>
               <div class="form-group">
-                <label for="luas">Luas</label> <span class="text-danger">*</span>
-                <input type="text" class="form-control @error('luas') is-invalid @enderror" id="luas" name="luas" value="{{ old('luas') }}">
+                <label for="luas">Luas (m<sup>2</sup>)</label> <span class="text-danger">*</span>
+                <input type="number" class="form-control @error('luas') is-invalid @enderror" id="luas" name="luas" value="{{ old('luas') }}">
                 @error('luas')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
