@@ -59,6 +59,12 @@
       <span>Jadwal Pupuk</span>
     </a>
   </li>
+  <li class="nav-item {{Request::segment(1) == 'penanaman-pasca-panen' ? 'active' : ''}}">
+    <a class="nav-link" href="{{ route('penanaman-pasca-panen.index') }}">
+      <i class="fas fa-calendar"></i>
+      <span>Kelola Penanaman dan Pasca Panen</span>
+    </a>
+  </li>
   <hr class="sidebar-divider">
   <div class="sidebar-heading">
     Laporan
