@@ -40,12 +40,12 @@
                   <td>: {{ $lahan->user->nama }}</td>
                 </tr>
                 <tr>
-                  <th>Status</th>
-                  <td>: {{ $lahan->status }}</td>
+                  <th>Jumlah Bibit</th>
+                  <td>: {{ $lahan->jumlah_bibit }}</td>
                 </tr>
                 <tr>
                   <th>Luas Lahan</th>
-                  <td>: {{ $lahan->luas }} </td>
+                  <td>: {{ $lahan->luas }} m<sup>2</sup></td>
                 </tr>
                 <tr>
                   <th>Daerah</th>

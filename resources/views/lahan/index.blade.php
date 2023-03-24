@@ -26,7 +26,7 @@
                     <th>ID</th>
                     <th>Nama Lahan</th>
                     <th>Nama Pemilik</th>
-                    <th>Status</th>
+                    <th>Jumlah Bibit</th>
                     <th>Luas</th>
                     <th>Daerah</th>
                     <th>Aksi</th>
@@ -38,8 +38,8 @@
                     <td>{{$lahan->id}}</td>
                     <td>{{$lahan->nama}}</td>
                     <td>{{$lahan->user->nama}}</td>
-                    <td>{{$lahan->status}}</td>
-                    <td>{{$lahan->luas}}</td>
+                    <td>{{$lahan->jumlah_bibit}}</td>
+                    <td>{{$lahan->luas}} m<sup>2</sup></td>
                     <td>{{$lahan->daerah}}</td>
                     <td>
                       <div class="row">

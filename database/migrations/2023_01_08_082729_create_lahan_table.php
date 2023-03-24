@@ -18,7 +18,7 @@ class CreateLahanTable extends Migration
             $table->foreignId('paket_tanam_id')->constrained('paket_tanam')->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('nama');
-            $table->string('status');
+            $table->integer('jumlah_bibit');
             $table->string('luas');
             $table->string('daerah');
             $table->timestamps();

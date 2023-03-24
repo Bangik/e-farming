@@ -15,7 +15,7 @@ class Lahan extends Model
         'user_id',
         'paket_tanam_id',
         'nama',
-        'status',
+        'jumlah_bibit',
         'luas',
         'daerah',
     ];

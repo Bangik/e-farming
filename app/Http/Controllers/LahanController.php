@@ -28,8 +28,8 @@ class LahanController extends Controller
             'user_id' => 'required',
             'paket_tanam_id' => 'required',
             'nama' => 'required',
-            'status' => 'required',
-            'luas' => 'required',
+            'jumlah_bibit' => 'required|numeric',
+            'luas' => 'required|numeric',
             'daerah' => 'required',
         ]);
 
@@ -59,8 +59,8 @@ class LahanController extends Controller
             'user_id' => 'required',
             'paket_tanam_id' => 'required',
             'nama' => 'required',
-            'status' => 'required',
-            'luas' => 'required',
+            'jumlah_bibit' => 'required|numeric',
+            'luas' => 'required|numeric',
             'daerah' => 'required',
         ]);
 
