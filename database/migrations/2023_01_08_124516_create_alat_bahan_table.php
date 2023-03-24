@@ -17,6 +17,7 @@ class CreateAlatBahanTable extends Migration
             $table->id();
             $table->string('kategori');
             $table->string('nama');
+            $table->string('jenis');
             $table->string('satuan');
             $table->integer('stok');
             $table->integer('harga');

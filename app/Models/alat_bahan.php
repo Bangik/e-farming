@@ -15,6 +15,7 @@ class alat_bahan extends Model
     protected $fillable = [
         'kategori',
         'nama',
+        'jenis',
         'satuan',
         'stok',
         'harga'
@@ -24,6 +25,7 @@ class alat_bahan extends Model
         $request->validate([
             'kategori' => 'required',
             'nama' => 'required',
+            'jenis' => 'required',
             'satuan' => 'required',
             'stok' => 'required|numeric',
             'harga' => 'required|numeric'
@@ -33,6 +35,7 @@ class alat_bahan extends Model
         DB::table('alat_bahan')->insert([
             'kategori' => $request->kategori,
             'nama' => $request->nama,
+            'jenis' => $request->jenis,
             'satuan' => $request->satuan,
             'stok' => $request->stok,
             'harga' => $request->harga

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Alat dan Bahan')
+@section('title', 'Tambah Alat, Bahan, atau Obat')
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Tambah Alat dan Bahan</h1>
+      <h1 class="h3 mb-0 text-gray-800">Tambah Alat, Bahan, atau Obat</h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{route('lahan.index')}}">Kelola Alat dan Bahan</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Tambah Alat dan Bahan</li>
+        <li class="breadcrumb-item"><a href="{{route('alatb.index')}}">Kelola Alat atau Bahan</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Tambah Alat, Bahan, atau Obat</li>
       </ol>
     </div>
 
@@ -15,7 +15,7 @@
       <div class="col-xl-12 col-lg-12 mb-4">
         <div class="card">
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Alat dan Bahan</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Tambah Alat, Bahan, atau Obat</h6>
           </div>
 
           <div class="card-body">
@@ -37,6 +37,17 @@
                   <strong>{{ $message }}</strong>
                   </span>
                   @enderror
+              </div>
+
+              <div class="form-group">
+                <label for="jenis">Jenis</label> <span class="text-danger">*</span>     
+                <input type="text" class="form-control @error('jenis') is-invalid @enderror" id="jenis" name="jenis" value="{{ old('jenis') }}">
+                
+                @error('jenis')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+                </span>
+                @enderror
               </div>
 
               <div class="form-group">
