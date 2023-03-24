@@ -8,6 +8,7 @@ use App\Http\Controllers\LahanController;
 use App\Http\Controllers\LaporanPanenController;
 use App\Http\Controllers\ObathController;
 use App\Http\Controllers\PaketTanamController;
+use App\Http\Controllers\PenanamanPascaPanenController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -39,6 +40,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('paket-tanam', PaketTanamController::class);
     Route::resource('laporan', LaporanPanenController::class);
     Route::resource('jadwal-pupuk', JadwalPupukController::class);
+    Route::resource('penanaman-pasca-panen', PenanamanPascaPanenController::class);
     Route::get('ganti-password', [HomeController::class, 'change_password'])->name('ganti-password.index');
     Route::post('ganti-password', [HomeController::class, 'update_password'])->name('ganti-password.update');
 });

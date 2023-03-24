@@ -34,4 +34,9 @@ class Lahan extends Model
     {
         return $this->hasMany(LaporanPanen::class);
     }
+
+    public function penanaman_pasca_panen()
+    {
+        return $this->hasMany(PenanamanPascaPanen::class);
+    }
 }
